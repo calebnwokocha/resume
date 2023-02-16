@@ -1,0 +1,23 @@
+.row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+  }
+  
+  .column-left {
+    grid-column: 1 / 2;
+  }
+  
+  .column-right {
+    grid-column: 2 / 3;
+  }
+  
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: navy;
+  }
