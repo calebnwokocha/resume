@@ -11,6 +11,10 @@
   .column-right {
     grid-column: 2 / 3;
   }
+
+  #email {
+    color: white;
+  }
   
   footer {
     position: fixed;
