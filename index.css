@@ -6,7 +6,6 @@
   
   .column-left {
     grid-column: 1 / 2;
-    background-color: orange;
   }
   
   .column-right {
