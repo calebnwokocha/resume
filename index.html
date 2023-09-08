@@ -7,6 +7,7 @@
 <body>
 	<div class="row">
         <div class="column-left">
+		<div class = "column-left-top">
 		<p>
 			<a target="_blank" href="https://www.researchgate.net/profile/Caleb-Nwokocha/research">ResearchGate</a>, 
 			<a target="_blank" href="https://github.com/calebnwokocha?tab=repositories">GitHub</a>,
@@ -21,6 +22,8 @@
 			<a target="_blank" href="https://www.instagram.com/caleb.nwokocha/">Instagram</a>, 
 			<a target="_blank" href="https://youtube.com/@calebnwokocha">YouTube</a>
 		</p>
+		</div>
+
   		<div id="wikipediaContent"></div>
 		<div>
 			<iframe width="260" height="260" src="https://www.youtube.com/embed/videoseries?list=PLpJntpio9zI5o8c8q8g6tQ_8bUMpdIVQg" title="YouTube video player" 
@@ -44,14 +47,6 @@
     <footer>
        	<p></p>
     </footer>
-    <script>
-       fetch('https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=extracts&titles=Jesus_Christ&exintro')
-       .then(response => response.json())
-       .then(data => {
-           const page = data.query.pages;
-           const content = page[Object.keys(page)[0]].extract;
-           document.getElementById('wikipediaContent').innerHTML = content;
-       });
-    </script>
+	<script src="script.js"></script>
 </body>
 </html>
