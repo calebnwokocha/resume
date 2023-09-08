@@ -3,5 +3,5 @@ fetch('https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop
    .then(data => {
        const page = data.query.pages;
        const content = page[Object.keys(page)[0]].extract;
-       document.getElementById('wikipediaContent').innerHTML = content;
+       document.getElementById('wikipedia-content').innerHTML = content;
    });
