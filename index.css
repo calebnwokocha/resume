@@ -9,7 +9,7 @@
   }
 
 .column-left-top {
-    background-color: orange;
+    background-color: green;
 }
   
   .column-right {
@@ -23,5 +23,5 @@
     width: 100%;
     color: white;
     text-align: center;
-    background-color: orange;
+    background-color: green;
   }
