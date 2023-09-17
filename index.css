@@ -13,6 +13,10 @@
     color: white;
     padding: 5px;
 }
+
+.column-left-top a {
+    color: white;
+}
   
   .column-right {
     grid-column: 2 / 3;
