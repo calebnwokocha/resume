@@ -15,7 +15,7 @@
 }
 
 .column-left-top a {
-    color: white;
+    color: white !important;
 }
   
   .column-right {
