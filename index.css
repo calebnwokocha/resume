@@ -2,11 +2,11 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 20px;
-     color: white !important;
   }
   
   .column-left {
     grid-column: 1 / 2;
+    color: white !important;
   }
 
 .column-left-top {
