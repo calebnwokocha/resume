@@ -33,6 +33,10 @@
     align-items: center;     /* Center vertically */
     height: 100vh;           /* Take full viewport height */
 }
+
+.donation-dp {
+    color: red;
+}
   
   footer {
     position: fixed;
