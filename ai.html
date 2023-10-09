@@ -9,7 +9,16 @@
   <label for="ai-reason">Why do you need artificial intelligence?</label>
   <textarea id="ai-reason" name="ai_reason" required></textarea>
   <input type="submit" value="Submit">
-</form>
+	
+</form><!-- Include Stripe's JavaScript library -->
 <script src="https://js.stripe.com/v3/"></script>
+
+<!-- Your JavaScript for initializing Stripe Elements -->
+<script>
+    var stripe = Stripe('YOUR-PUBLISHABLE-KEY');
+    var elements = stripe.elements();
+    var card = elements.create('card');
+    card.mount('#card-element');
+</script>
 </body>
 </html>
