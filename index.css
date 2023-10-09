@@ -18,15 +18,16 @@
 .column-left-top a {
     color: white !important;
 }
+
+.column-left-top artificial-intelligence {
+        margin-top: 50;
+        color: yellow !important;
+}
   
   .column-right {
     grid-column: 2 / 3;
   }
 
-.artificial-intelligence {
-        margin-top: 50;
-        color: yellow !important;
-}
   
   footer {
     position: fixed;
