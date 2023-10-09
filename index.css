@@ -22,6 +22,11 @@
   .column-right {
     grid-column: 2 / 3;
   }
+
+.artificial intelligence {
+        margin-top: 50;
+        color: yellow !important;
+}
   
   footer {
     position: fixed;
