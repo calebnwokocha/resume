@@ -27,21 +27,25 @@
     grid-column: 2 / 3;
   }
 
-.top-right-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10; /* Ensure the image is on top of other elements, adjust as needed */
-    width: 150px;       /* This will set the width of the image */
-    height: auto;       /* This will maintain the aspect ratio */
-}
+.container {
+    position: relative;
+    height: 100vh;
 }
 
 .stripe {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    height: 100vh;           /* Take full viewport height */
+    justify-content: center;
+    align-items: center;
+    height: 100%;  /* Adjust to 100% so it takes the full height of its parent (.container) */
+}
+
+.top-right-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10; 
+    width: 150px; 
+    height: auto; 
 }
 
 .donation-dp {
