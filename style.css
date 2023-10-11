@@ -6,7 +6,7 @@
   
   .column-left {
     grid-column: 1 / 2;
-    background-color: blue;
+    background-color: #0074D4;
   }
 
 .column-left-top {
