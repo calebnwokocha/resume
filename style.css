@@ -24,8 +24,6 @@
     background-color: white !important;
     color: red !important;
     padding: 10px 20px !important;      /* Provides spacing around the text */
-    border: 2px solid red !important;   /* Adds a red border around the button */
-    border-radius: 5px !important;      /* Rounds the corners for a button-like appearance */
     text-decoration: none !important;   /* Removes underline if it's an anchor tag */
 }
   
