@@ -8,24 +8,6 @@
     grid-column: 1 / 2;
     background-color: #0074D4;
   }
-
-.column-left-top {
-    background-color: #0074D4;
-    color: white;
-    padding: 5px;
-}
-
-.column-left-top a {
-    color: white !important;
-}
-
-.column-left-top .hire {
-    display: inline-block !important;   /* Allows for padding to be applied effectively */
-    background-color: white !important;
-    color: red !important;
-    padding: 10px 20px !important;      /* Provides spacing around the text */
-    text-decoration: none !important;   /* Removes underline if it's an anchor tag */
-}
   
   .column-right {
     grid-column: 2 / 3;
