@@ -4,13 +4,16 @@
     grid-gap: 20px;
   }
   
-  .column-left {
+.column-left {
     grid-column: 1 / 2;
     background-color: #0074D4;
-    color: white !important;
     padding: 5px !important;
-  }
-  
+}
+
+.column-left, .column-left a {
+    color: white !important;
+}
+
   .column-right {
     grid-column: 2 / 3;
   }
