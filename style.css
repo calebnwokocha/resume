@@ -36,20 +36,9 @@
     height: 100vh;
 }
 
-.stripe {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;  /* Adjust to 100% so it takes the full height of its parent (.container) */
-}
-
 image {
     width: 50px !important; 
     height: auto !important; 
-}
-
-.hire-dp {
-    color: red;
 }
   
   footer {
