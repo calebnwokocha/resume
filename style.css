@@ -8,7 +8,7 @@
     grid-column: 1 / 2;
     background-color: #0074D4;
     color: white !important;
-    padding: 5px;
+    padding: 5px !important;
   }
   
   .column-right {
