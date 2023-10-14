@@ -43,11 +43,7 @@
     height: 100%;  /* Adjust to 100% so it takes the full height of its parent (.container) */
 }
 
-.top-right-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10; 
+image {
     width: 50px !important; 
     height: auto !important; 
 }
