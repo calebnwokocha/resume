@@ -7,13 +7,9 @@
   .column-left {
     grid-column: 1 / 2;
     background-color: #0074D4;
-    margin-left: 5px;
-    margin-bottom: 5px;
-  }
-
-.colum-left a p {
     color: white !important;
-}
+    padding: 5px;
+  }
   
   .column-right {
     grid-column: 2 / 3;
