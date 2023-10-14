@@ -24,7 +24,7 @@
     height: 100vh;
 }
 
-image {
+.image {
     width: 50px !important; 
     height: auto !important; 
 }
