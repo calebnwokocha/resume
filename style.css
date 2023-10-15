@@ -29,6 +29,7 @@
 
   .column-right {
     grid-column: 2 / 3;
+    background-color: #FFFFE0;
   }
 
 .container {
