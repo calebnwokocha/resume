@@ -14,6 +14,19 @@
     color: white !important;
 }
 
+.column-left .button {
+    background-color: #FFD700; /* Yellow Color */
+    border: none;
+    color: black; /* Text Color */
+    padding: 10px 20px; /* Vertical Padding & Horizontal Padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
   .column-right {
     grid-column: 2 / 3;
   }
