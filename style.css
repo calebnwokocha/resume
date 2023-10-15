@@ -8,11 +8,6 @@
     grid-column: 1 / 2;
     background-color: #0074D4;
     padding: 5px !important;
-    padding-bottom: 0px !important;
-}
-
-.column-left .donation {
-    background-color: #FF0000 !important;
 }
 
 .column-left, .column-left a {
