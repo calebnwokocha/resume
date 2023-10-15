@@ -1,23 +1,9 @@
-body, html {
-    height: 100%;
-    overflow: hidden; /* Prevents scrolling on the whole page */
-    margin: 0;        /* Ensures no default margin */
-    padding: 0;       /* Ensures no default padding */
-}
-
 .row {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 20px;
-    height: 100vh;  
-}
-
-.column-left, .column-right {
-    height: 100%;          /* Take the full height of their parent */
-    overflow-y: auto;      /* Make them scrollable */
-    box-sizing: border-box; /* Ensures padding and border are included in the total height/width */
-}
-
+  }
+  
 .column-left {
     grid-column: 1 / 2;
     background-color: #0074D4;
@@ -31,8 +17,8 @@ body, html {
 .column-left .button {
     background-color: #FF0000;
     border: none;
-    color: white;
-    padding: 10px 20px;
+    color: while; /* Text Color */
+    padding: 10px 20px; /* Vertical Padding & Horizontal Padding */
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -41,13 +27,18 @@ body, html {
     cursor: pointer;
 }
 
-.column-right {
+  .column-right {
     grid-column: 2 / 3;
     background-color: #FFFFE0;
     padding: 5px !important;
-}
+  }
 
-footer {
+.container {
+    position: relative;
+    height: 100vh;
+}
+  
+  footer {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -55,4 +46,4 @@ footer {
     color: white;
     text-align: center;
     background-color: white;
-}
+  }
