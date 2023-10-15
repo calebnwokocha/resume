@@ -1,49 +1,58 @@
+body, html {
+  height: 100%;
+  overflow: hidden; /* Prevents scrolling on the whole page */
+  margin: 0;        /* Ensures no default margin */
+  padding: 0;       /* Ensures no default padding */
+}
+
 .row {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 20px;
-  }
-  
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+  height: 100vh;  
+}
+
+.column-left, .column-right {
+  height: 100%;          /* Take the full height of their parent */
+  overflow-y: auto;      /* Make them scrollable */
+  box-sizing: border-box; /* Ensures padding and border are included in the total height/width */
+}
+
 .column-left {
-    grid-column: 1 / 2;
-    background-color: #0074D4;
-    padding: 5px !important;
+  grid-column: 1 / 2;
+  background-color: #0074D4;
+  padding: 5px !important;
 }
 
 .column-left, .column-left a {
-    color: white !important;
+  color: white !important;
 }
 
 .column-left .button {
-    background-color: #FF0000;
-    border: none;
-    color: while; /* Text Color */
-    padding: 10px 20px; /* Vertical Padding & Horizontal Padding */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+  background-color: #FF0000;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
-  .column-right {
-    grid-column: 2 / 3;
-    background-color: #FFFFE0;
-    padding: 5px !important;
-  }
-
-.container {
-    position: relative;
-    height: 100vh;
+.column-right {
+  grid-column: 2 / 3;
+  background-color: #FFFFE0;
+  padding: 5px !important;
 }
-  
-  footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    background-color: white;
-  }
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  background-color: white;
+}
