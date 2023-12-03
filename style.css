@@ -2,6 +2,14 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 20px;
+  max-width: 1200px; /* Set a maximum width for the content */
+  margin: 0 auto; /* Center the content horizontally */
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  margin: 0 auto; /* Center the content horizontally */
 }
 
 .column-left {
@@ -11,7 +19,6 @@
 }
 
 .column-left, .column-left a {
-  
   color: #ffffff !important; /* White */
 }
 
