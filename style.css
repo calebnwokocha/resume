@@ -7,16 +7,14 @@ body {
 
 /* Grid Styles */
 .row {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
+  display: flex;
+  flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .column-left,
 .column-right {
-  grid-column: 1;
   padding: 20px;
 }
 
@@ -50,10 +48,6 @@ body {
 
 /* Footer Styles */
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
   color: #003366; /* Dark Blue */
   text-align: center;
   background-color: #ffffff; /* White */
@@ -62,11 +56,11 @@ footer {
 /* Media Query for Smaller Screens (Smartphones) */
 @media only screen and (min-width: 600px) {
   .row {
-    grid-template-columns: 1fr 2fr;
+    flex-direction: row;
   }
 
   .column-left,
   .column-right {
-    grid-column: auto; /* Reset grid column to default for larger screens */
+    flex: 1;
   }
 }
