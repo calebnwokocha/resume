@@ -54,13 +54,8 @@ footer {
 }
 
 /* Media Query for Smaller Screens (Smartphones) */
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
   .row {
-    flex-direction: row;
-  }
-
-  .column-left,
-  .column-right {
-    flex: 1;
+    grid-template-columns: 1fr; /* Set to a single column layout */
   }
 }
