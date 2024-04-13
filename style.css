@@ -22,17 +22,17 @@ body {
 /* Styling for Column Left */
 .column-left {
   background-color: #ffffe0; /* Yellow */
-  color: #000000; /* White */
+  color: #000000; /* Black */
 }
 
 .column-left a {
-  color: #000000; /* White */
+  color: #000000; /* Black */
 }
 
 .column-left .button {
   background-color: #0056b3; /* Navy Blue */
   border: none;
-  color: #ffffff; /* White */
+  color: #000000; /* Black */
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
