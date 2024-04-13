@@ -21,12 +21,12 @@ body {
 
 /* Styling for Column Left */
 .column-left {
-  background-color: #ffffe0; /* Dark Blue */
-  color: #ffffff; /* White */
+  background-color: #ffffe0; /* Yellow */
+  color: #000000; /* White */
 }
 
 .column-left a {
-  color: #ffffff; /* White */
+  color: #000000; /* White */
 }
 
 .column-left .button {
