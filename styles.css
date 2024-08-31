@@ -2,47 +2,21 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-}
-
-.wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    height: 100%;
     padding: 20px;
     box-sizing: border-box;
 }
 
-.ad {
-    flex: 0 0 160px;
-    background-color: #e4e4e4;
-    color: #333;
-    text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.ad img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
 .main-content {
-    flex: 1;
+    width: 100%;
     max-width: 600px;
     background-color: #ffffff;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 .container {
@@ -50,7 +24,7 @@ body {
 }
 
 .output-area {
-    height: 200px;
+    height: 150px;
     overflow-y: auto;
     border: 1px solid #ddd;
     padding: 10px;
@@ -60,7 +34,7 @@ body {
 
 #inputText {
     width: calc(100% - 90px);
-    height: 200px;
+    height: 50px;
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #ddd;
@@ -82,4 +56,27 @@ body {
 
 #submitButton:hover {
     background-color: #218838;
+}
+
+.ads-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.ad {
+    background-color: #e4e4e4;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ad img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }

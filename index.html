@@ -16,31 +16,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="ad left-ad">
+    <div class="main-content">
+        <div class="container">
+            <div id="output" class="output-area"></div>
+            <textarea id="inputText" placeholder="Type something..."></textarea>
+            <button id="submitButton">Submit</button>
+        </div>
+    </div>
+
+    <div class="ads-container">
+        <div class="ad">
             <!-- Left Ad Content -->
             <h3>Exclusive Web Hosting Deals</h3>
             <a href="YOUR_AFFILIATE_LINK_1" target="_blank">
-                <img src="https://via.placeholder.com/160x600.png?text=Web+Hosting+Ad" alt="Web Hosting Ad">
+                <img src="https://via.placeholder.com/300x250.png?text=Web+Hosting+Ad" alt="Web Hosting Ad">
             </a>
             <p>Get up to 50% off on the best web hosting services. Limited time offer!</p>
         </div>
-        <div class="main-content">
-            <div class="container">
-                <div id="output" class="output-area"></div>
-                <textarea id="inputText" placeholder="Type something..."></textarea>
-                <button id="submitButton">Submit</button>
-            </div>
-        </div>
-        <div class="ad right-ad">
+        <div class="ad">
             <!-- Right Ad Content -->
             <h3>Top Online Courses</h3>
             <a href="YOUR_AFFILIATE_LINK_2" target="_blank">
-                <img src="https://via.placeholder.com/160x600.png?text=Online+Courses+Ad" alt="Online Courses Ad">
+                <img src="https://via.placeholder.com/300x250.png?text=Online+Courses+Ad" alt="Online Courses Ad">
             </a>
             <p>Learn new skills from the best instructors. Enroll in top-rated courses today!</p>
         </div>
     </div>
+
     <script src="Model.js"></script>
     <script src="app.js"></script>
 </body>
