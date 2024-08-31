@@ -25,6 +25,13 @@ body {
     box-sizing: border-box;
 }
 
+.ad img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
 .left-ad {
     margin-right: 10px;
 }
