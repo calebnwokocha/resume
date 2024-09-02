@@ -7,7 +7,7 @@ class Model {
         this.memory += " " + input;
         const latinSquare = this.latinSquare();
         const stochasticNum = Math.floor(Math.random() * latinSquare.length);
-        let output = "AI: ";
+        let output = "\nAI: ";
         for (let i = 0; i < stochasticNum; i++) {
             output += latinSquare[stochasticNum][i] + " ";
         }
