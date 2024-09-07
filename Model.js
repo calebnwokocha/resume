@@ -8,9 +8,11 @@ class Model {
         const latinSquare = this.latinSquare();
         const stochasticValue = Math.floor(Math.random() * latinSquare.length);
         let output = "AI: ";
+        
         for (let value = 0; value < stochasticValue; value++) {
             output += latinSquare[stochasticValue][value] + " ";
         }
+
         return output.trim();
     }
 
@@ -20,10 +22,11 @@ class Model {
         const latinSquare = Array.from({ length: n }, () => Array(n).fill(""));
 
         for (let row = 0; row < n; row++) {
-                for (let col = 0; col < n; col++) {
-                    latinSquare[row][col] = words[(row + col) % n];
-                }
+            for (let col = 0; col < n; col++) {
+                latinSquare[row][col] = words[(row + col) % n];
+            }
         }
+
         return latinSquare;
     }
 }
