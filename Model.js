@@ -7,7 +7,6 @@ class Model {
         this.memory.push(input);
         const latinSquare = this.latinSquare();
         const stochasticValue = Math.floor(Math.random() * latinSquare.length);
-        
         return "AI: " + latinSquare[stochasticValue].slice(0, stochasticValue).join(" ");
     }
 
