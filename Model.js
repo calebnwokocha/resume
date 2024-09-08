@@ -1,32 +1,20 @@
 class Model {
     constructor() {
-        this.memory = "";
+        this.memory = [];
     }
 
     generate(input) {
-        this.memory += " " + input;
+        this.memory.push(input);
         const latinSquare = this.latinSquare();
         const stochasticValue = Math.floor(Math.random() * latinSquare.length);
-        let output = "AI: ";
         
-        for (let value = stochasticValue; value < latinSquare.length; value++) {
-            output += latinSquare[value][value] + " ";
-        }
-
-        return output.trim();
+        return "AI: " + latinSquare[stochasticValue].slice(0, stochasticValue).join(" ");
     }
 
     latinSquare() {
-        const words = this.memory.trim().split(/\s+/);
-        const n = words.length;
-        const latinSquare = Array.from({ length: n }, () => Array(n).fill(""));
-
-        for (let row = 0; row < n; row++) {
-            for (let col = 0; col < n; col++) {
-                latinSquare[row][col] = words[(row + col) % n];
-            }
-        }
-
-        return latinSquare;
+        const n = this.memory.length;
+        return Array.from({ length: n }, (_, row) => 
+            this.memory.map((_, col) => this.memory[(row + col) % n])
+        );
     }
 }
