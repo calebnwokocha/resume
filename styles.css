@@ -35,7 +35,7 @@ body {
 }
 
 #inputText {
-    width: calc(100% - 90px);
+    width: calc(100% - 80px);
     height: 50px;
     padding: 10px;
     margin-right: 10px;
