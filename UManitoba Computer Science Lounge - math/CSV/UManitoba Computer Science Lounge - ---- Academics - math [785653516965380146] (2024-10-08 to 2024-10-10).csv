@@ -1,0 +1,402 @@
+AuthorID,Author,Date,Content,Attachments,Reactions
+"951696973164064779","arsh_0.0_","2024-10-08T07:52:19.6890000-05:00","https://www.theglobeandmail.com/world/article-canadas-geoffrey-hinton-ai-pioneer-co-wins-nobel-prize-in-physics-with/","",""
+"951696973164064779","arsh_0.0_","2024-10-08T07:53:43.4620000-05:00","Wow! computer scientists won Nobel Prize in Physics","",""
+"747395140926177280","comtdk","2024-10-08T08:13:39.7830000-05:00",":why_kong_wario: 🙉","",""
+"854062130797871106","calebnwokocha","2024-10-08T09:27:16.9810000-05:00","https://www.youtube.com/watch?v=g1Z5wAYv8i8&t=272s","",""
+"304267855610904577","jjanzenn","2024-10-08T09:35:29.2910000-05:00","That algorithm is not in NP or P","",""
+"304267855610904577","jjanzenn","2024-10-08T09:40:01.8730000-05:00","Your verification algorithm does not check whether the certificate is a valid certificate for the problem instance","",""
+"304267855610904577","jjanzenn","2024-10-08T09:43:15.8000000-05:00","To check that the last number that is printed is 2^k and that it is a valid certificate, you need to check each k, k+1, ..., 2^k is also printed","",""
+"383088370709954561","2lazy2beoriginal","2024-10-08T09:44:09.8210000-05:00","It’s not n! At least","",""
+"854062130797871106","calebnwokocha","2024-10-08T09:56:29.7130000-05:00","@jacob ""first year"" janzen The claim that the algorithm is not in NP or P and that the verification algorithm does not check whether the certificate is valid for the problem instance is incorrect. 
+
+Problem Definition: In the context of NP, a problem is classified in NP if its solution (or certificate) can be verified in polynomial time. The task here is to count from k to 2^k, and the certificate is the output sequence where the last value must be 2^k.
+
+Verification Step: The verification algorithm checks if the last printed value is 2^k. This check is sufficient because the algorithm is deterministic: if the last value is correct and the counting logic is correct, all intermediate values k, k+1, ..., 2^k are guaranteed to have been printed. There's no need to verify each intermediate value separately because the counting process itself ensures their correctness.
+
+Complexity Class: The verification step, which compares the last printed value to 2^k, runs in constant time O(1), placing this problem in NP. The counting process, although exponential, does not disqualify the problem from NP, as NP problems can have exponential complexity but still be verifiable in polynomial time.
+
+Thus, the problem is indeed in NP, and the verification algorithm correctly checks the validity of the certificate.","",""
+"304267855610904577","jjanzenn","2024-10-08T09:58:57.3470000-05:00","I mean go off and collect your millenium prize or whatever, but I can assure you no journal will accept your proof because it is incorrect. You do not have a valid verification algorithm and the problem is *not* in NP","",""
+"304267855610904577","jjanzenn","2024-10-08T10:01:27.2970000-05:00","See https://discord.com/channels/724363919035990106/785653516965380146/1288972132071637117 for ChatGPT ""proving"" the exact opposite result. ChatGPT is terrible at math and will not be a reliable source for computational complexity results.","",""
+"505495864777768970","_swigg","2024-10-08T10:16:43.0480000-05:00","I think you're confusing solving time vs. verification time","",""
+"505495864777768970","_swigg","2024-10-08T10:17:33.4160000-05:00","sure the last check is a constant O(1) expression, but NP means it is *solvable* in polynomial time, not that the solution can be verified in polynomial time","",""
+"505495864777768970","_swigg","2024-10-08T10:18:00.5070000-05:00","unless you're arguing that it takes 2^k time to run","",""
+"304267855610904577","jjanzenn","2024-10-08T10:18:00.8320000-05:00","NP means solvable in polynomial time *with* a non-deterministic Turing machine, so not quite","","👍 (1)"
+"505495864777768970","_swigg","2024-10-08T10:18:51.5530000-05:00","anw I wouldn't count on chatgpt to prove anything","",""
+"304267855610904577","jjanzenn","2024-10-08T10:19:07.4710000-05:00","this is equivalent to being verifiable in polynomial time","",""
+"505495864777768970","_swigg","2024-10-08T10:19:10.2570000-05:00","chatgpt fails at basic multiplication sometimes","",""
+"505495864777768970","_swigg","2024-10-08T10:19:20.4780000-05:00","ah ok","",""
+"854062130797871106","calebnwokocha","2024-10-08T10:21:42.1170000-05:00","It is true that ChatGPT can produce incorrect result sometimes, but I did not use ChatGPT to discover the algorithm (ECVA), I just used ChatGPT to describe ECVA. I would like to see the complete conversation of https://discord.com/channels/724363919035990106/785653516965380146/1288972132071637117 to find where the error started.","",""
+"304267855610904577","jjanzenn","2024-10-08T10:23:40.2290000-05:00","the error is in the second screenshot where it makes a reduction from SAT to 2-SAT. ""clause splitting"" is a technique that ChatGPT made up. (a_1\lor a_2\lor a_3)\neq(a_1\lor a_2)\land(a_2\lor a_3)","",""
+"304267855610904577","jjanzenn","2024-10-08T10:26:00.8270000-05:00","Let me just cite my Computational Complexity Theory slides for the definition of NP:","image-61E71.png",""
+"304267855610904577","jjanzenn","2024-10-08T10:26:35.4140000-05:00","With your verification algorithm, there can be NO-instances with a certificate that would make it return YES","",""
+"304267855610904577","jjanzenn","2024-10-08T10:28:16.0270000-05:00","For instance, suppose you have k=4 and the program just prints out ""16"" and your certificate, which is just the last value printed out, is ""16"". This is the last value that was printed out, but this is still not a YES-instance of the problem; the program never printed out 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, or 15","",""
+"304267855610904577","jjanzenn","2024-10-08T10:30:52.5480000-05:00","and furthermore, this problem is still not computable by a nondeterministic Turing machine in polynomial time. There is a hard lower bound of 2^k-k operations no matter which model of computation you use","",""
+"304267855610904577","jjanzenn","2024-10-08T10:32:53.2970000-05:00","I appreciate that you want to find something interesting, but this is just not good research. I encourage you to gain a deeper understanding of computational complexity theory before you try to prove results like this","",""
+"854062130797871106","calebnwokocha","2024-10-08T10:35:32.1530000-05:00","The verification algorithm checks if the last printed value is 2^k. This check is sufficient because the algorithm is deterministic: if the last value is correct and the counting logic is correct, all intermediate values k, k+1, ..., 2^k are guaranteed to have been printed. There's no need to verify each intermediate value separately because the counting process itself ensures their correctness.","",""
+"304267855610904577","jjanzenn","2024-10-08T10:37:40.9490000-05:00","The verification algorithm **must** account for malicious inputs, else it does not hold. My counter-example here https://discord.com/channels/724363919035990106/785653516965380146/1293233510529892414 does return YES on your verification algorithm and is not a YES-instance. Therefore, your verification algorithm does not work.","",""
+"304267855610904577","jjanzenn","2024-10-08T10:40:53.4460000-05:00","The key thing is that if x is a NO-instance, then Vfr(x,S) outputs 0 for every S, including values for S that are the same as certificates for a YES-instance","",""
+"854062130797871106","calebnwokocha","2024-10-08T11:01:12.0920000-05:00","@jacob ""first year"" janzen The claim that the verification algorithm would mistakenly return ""YES"" on malicious inputs misunderstands the nature of the counting process and certificate validation:
+
+**Deterministic Nature of ECVA**: ECVA deterministically counts from k to 2^k, meaning it **cannot** skip intermediate values. For any valid input k, the process outputs every integer in the range k to 2^k. Therefore, if the last printed value is 2^k, it implies all preceding values were printed.
+
+**No Ambiguity for YES/NO Instances**: If the input k is valid and ECVA correctly outputs 2^k, this output implicitly verifies that every value from k to 2^k has been printed. The verification checks the end condition and does not require examining intermediate values separately since the sequence is deterministic and sequential.
+
+**Malicious Input Handling**: Malicious inputs that attempt to skip values would not succeed in this case because ECVA inherently processes every value in the defined range. The verification step only needs to check if the last value is 2^k, and since ECVA cannot produce a false certificate (i.e., it can't reach 2^k without printing all preceding values), any ""malicious input"" scenario is irrelevant.
+
+Thus, ECVA structure ensures that any valid certificate correctly represents a YES-instance, and malicious inputs cannot bypass this verification process.","",""
+"304267855610904577","jjanzenn","2024-10-08T11:08:19.9400000-05:00","You do not understand how verification algorithms work for proving NP. You repeatedly state the same things that have clearly been copy-pasted from ChatGPT without using critical thinking to evaluate what you are sending. Your ""proof"" is blatantly incorrect and I don't know how to convince you further. Go waste your time and money on getting this published. No reputable journal will publish it and peer reviewers will give you exactly the same feedback that I have. *You* misunderstand ""the nature"" of ""certificate validation"". Yes the algorithm for ECVA is deterministic. That says nothing about whether an input to your verification algorithm used a correct algorithm for ECVA.","",""
+"304267855610904577","jjanzenn","2024-10-08T11:08:44.1300000-05:00","# if you respond, please respond to me with your own words and not a ChatGPT-generated answer","","thistbh (4)"
+"363279137768734720","pieberrykinnie","2024-10-08T11:39:19.9970000-05:00","https://x.com/kareem_carr/status/1843648283383869561?s=61&t=YMJk6nXyvgH9-m7HielrjA","",""
+"854062130797871106","calebnwokocha","2024-10-08T11:53:05.8910000-05:00","@jacob ""first year"" janzen  In the slide, what is |<C>| and |x|?","image-443A3.webp",""
+"304267855610904577","jjanzenn","2024-10-08T11:57:06.5690000-05:00","<C> is an efficient binary encoding of the certificate, |<C>| is the size of the binary encoding of the certificate. x is the input and |x| is the size of the input.","",""
+"445955839757385739","mythic7777","2024-10-08T12:27:35.0800000-05:00","One other fact is that the verification that you mention in the second step is no longer a polynomial time verification. As such, your certificate does not hold and hence the problem is not in NP.","",""
+"445955839757385739","mythic7777","2024-10-08T12:31:41.0120000-05:00","And again, echoing what Jacob already said. ChatGPT is very good at masking a wrong answer and making it appear as though if it were right; especially for computational complexity problems. And when you’re just starting out and don’t know much, you will not be able to parse through where and why the output generated by ChatGPT is wrong.","",""
+"445955839757385739","mythic7777","2024-10-08T12:32:26.3630000-05:00","I implore you to first critically think, solve, and understand the problem. This will be far more beneficial than copying any AI model’s output for a temporary satisfactory answer.","",""
+"224685921096826880","christopher5825","2024-10-08T18:06:40.0480000-05:00","K = 10
+
+I am an algorithm for counting from K to 2^K. I do not work. I return: 1,-25,534, 15, 2^10. 
+You check the last value, and conclude I counted correctly from k to 2^K.","",""
+"224685921096826880","christopher5825","2024-10-08T18:08:21.3470000-05:00","If you are relying on the assumption that you count correctly, that needs to be verified in the output. this is claiming that P!=NP if you use a very inefficient algorithm to compute 2^K and verify it with a good algorithm.","",""
+"854062130797871106","calebnwokocha","2024-10-08T21:07:17.2640000-05:00","@jacob ""first year"" janzen @Atish (Is NOT an Owl) @hawkstopher tuaheuer 
+
+Suppose I have two jars A and B. Jar A volume is 1 unit and jar B volume is 2^k units. 
+
+My problem is to fill jar B with water by using only jar A. Time complexity of this problem is O(2^k) because each loop of filling jar B requires O(1) and 1 unit of jar A. 
+
+To verify whether the problem is indeed solved correctly, the verifier only have to check the brim of jar B and see that it is filled or not filled. The verification is constant time in nature, making the problem in NP. That is, solution of the problem requires exponential time and verification of the solution requires polynomial time. 
+
+Is there an efficient polynomial time algorithm to solve the problem?","",""
+"304267855610904577","jjanzenn","2024-10-08T21:12:49.9320000-05:00","how do you verify that jar B was only filled using jar A?","",""
+"304267855610904577","jjanzenn","2024-10-08T21:14:35.0030000-05:00","say I have jar C of size 2^{k-1} units. I fill jar B by pouring the contents of jar C into jar B twice. The brim of jar B shows that it is filled yet jar B was not filled by only using jar A.","",""
+"304267855610904577","jjanzenn","2024-10-08T21:16:04.3320000-05:00","and again, this argument is no different, it is simply framed in a way that better obscures the obvious flaws in the proof","",""
+"854062130797871106","calebnwokocha","2024-10-08T21:28:29.0830000-05:00","The only way I think the verifier can verify that jar B was only filled using jar A is if the verifier was watching me as I solve the problem.","",""
+"144636179722141696","slabdrill","2024-10-08T21:28:29.1290000-05:00","generating a list of size 2^n isn't doable in polynomial time, although the argument is entirely different than what you seem to think it is. but what you're doing also isn't in NP.","",""
+"304267855610904577","jjanzenn","2024-10-08T21:29:01.7790000-05:00","An even better way to think about this is to consider the other (equivalent) definition of NP. That is, there must be a non-deterministic Turing machine that decides the problem in polynomial time. To print 2^k-k values with a nondeterministic Turing machine, you still need at least 2^k-k operations to print each value. The non-determinism changes nothing in this scenario. It can choose multiple state transitions at the same time, but at the end, each path of computation is independent and each path that halts in an accept state must have printed 2^k-k values independently in at least 2^k-k steps","",""
+"304267855610904577","jjanzenn","2024-10-08T21:29:12.7350000-05:00","and that verifier would take exponential time","",""
+"559559648248594432","atoph","2024-10-08T21:29:56.4280000-05:00","Guys the math nerds are at it again 😭","",""
+"221369063606190081","mikey_9354","2024-10-08T21:30:13.8810000-05:00","nono, keep it going, please 🍿","",""
+"559559648248594432","atoph","2024-10-08T21:30:17.4680000-05:00","Lmao","",""
+"144636179722141696","slabdrill","2024-10-08T21:30:23.1520000-05:00","you can get the math nerds to talk to you too by submitting a bad chatgpt proof","","thistbh (3)"
+"799461567555960843","kerchup","2024-10-08T21:31:54.5270000-05:00","Me knowing nothing abt computability theory: :kirbypopcorn:","","thistbh (3)"
+"445955839757385739","mythic7777","2024-10-08T21:32:10.6150000-05:00","It’s a very fascinating field.","",""
+"221369063606190081","mikey_9354","2024-10-08T21:32:27.2190000-05:00","Same, I avoided theoretical cs like the plague, but its fun to talk about examples","",""
+"144636179722141696","slabdrill","2024-10-08T21:34:35.7130000-05:00","it was cool the first time i saw computability theory papers ~~as like literally the only cs papers ive ever read~~
+related topics come up surprisingly often when i talk puzzle games for some reason","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:35:12.5280000-05:00","are you solved in non-deterministic polynomial time because you can be reduced to an NP problem or can you be reduced to an NP problem because you are solved in non-deterministic polynomial time or whatever it means idk","",""
+"445955839757385739","mythic7777","2024-10-08T21:35:27.8210000-05:00","Btw if you want to self study comparability theory, I would recommend this book: Computers and Intractability by Garey and Johnson","",""
+"445955839757385739","mythic7777","2024-10-08T21:35:51.3830000-05:00","It will follow a formal language framework that shows you why certain methods exists and why some don’t work.","",""
+"304267855610904577","jjanzenn","2024-10-08T21:36:14.5810000-05:00","a reduction to an NP problem is not sufficient to show a problem is in NP. You have to show that it is computable in non-deterministic polynomial time","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:36:26.4700000-05:00","https://tenor.com/view/big-o-notation-computer-science-n-factorial-factorial-shock-gif-16724024526637897574","",""
+"144636179722141696","slabdrill","2024-10-08T21:37:06.3820000-05:00","the definition of NP is ""can be solved in non-deterministic polynomial time"", and this is mostly unrelated to reductions","",""
+"445955839757385739","mythic7777","2024-10-08T21:37:08.7880000-05:00","For you to show it is in NP-Compleye you need to show that you can verify it in non deterministic polynomial time and then further you need to show a valid polynomial reduction from a known NP-Cololete problem to your problem","",""
+"445955839757385739","mythic7777","2024-10-08T21:37:22.7490000-05:00","Where each YES instance maps to YES and each NO instance maps to NO","",""
+"445955839757385739","mythic7777","2024-10-08T21:37:45.5060000-05:00","The preexisting problem that prompted this field is SAT.","",""
+"144636179722141696","slabdrill","2024-10-08T21:38:00.7020000-05:00","we got to see a proof of SAT being np-complete in class last week it was cool","",""
+"445955839757385739","mythic7777","2024-10-08T21:38:11.5680000-05:00","You can take a look at the 1971 paper by Cook to see I think the furst 21 problems that were proved to be NP-Colpkete","",""
+"304267855610904577","jjanzenn","2024-10-08T21:38:12.5500000-05:00","cook-levin theorem my beloved","",""
+"559559648248594432","atoph","2024-10-08T21:38:30.4760000-05:00","Proof: (All integers are equal)
+Let 𝑎 and 𝑏 be any two integers. We will prove that 𝑎=𝑏.
+
+Consider the following equation:
+𝑓(𝑥)=(𝑥−𝑎)(𝑥−𝑏)
+This is a quadratic function. Now, let's expand it:
+𝑓(𝑥)=𝑥^2−(𝑎+𝑏)𝑥+𝑎𝑏
+Assume 𝑎=𝑏. In this case, the function simplifies:
+𝑓(𝑥)=(𝑥−𝑎)^2=𝑥^2−2𝑎𝑥+𝑎^2
+
+Clearly, the function has a double root at 
+𝑥=𝑎.
+
+Take the derivative of the function 𝑓(𝑥)
+𝑓′(𝑥)=2𝑥−(𝑎+𝑏)
+Now, evaluate the derivative at 
+𝑥=𝑎 and 
+𝑥=𝑏:
+
+𝑓′(𝑎)=2𝑎−(𝑎+𝑏)=𝑎−𝑏
+𝑓′(𝑏)=2𝑏−(𝑎+𝑏)=𝑏−𝑎
+
+If 𝑎=𝑏, we have 𝑓′(𝑎)=𝑓′(𝑏)=0. This implies that the function’s slope is zero at both 
+𝑎 and 𝑏.
+
+Now suppose 
+𝑎≠𝑏, but since 
+𝑓′(𝑎)=𝑎−𝑏 and 
+𝑓′(𝑏)=𝑏−𝑎, we get 
+𝑎−𝑏=0, which means 
+𝑎=𝑏.
+
+Conclusion: Since we assumed nothing special about 
+𝑎 and 𝑏, it follows that for any two integers 
+𝑎 and 𝑏, 𝑎=𝑏. Therefore, all integers are equal.
+
+Q.E.D.","",""
+"445955839757385739","mythic7777","2024-10-08T21:38:39.7620000-05:00","What the fuck Aidan’s","","thistbh (2)"
+"363279137768734720","pieberrykinnie","2024-10-08T21:38:45.3970000-05:00","why do you have the freaky font","",""
+"304267855610904577","jjanzenn","2024-10-08T21:38:47.0400000-05:00","lmao","",""
+"144636179722141696","slabdrill","2024-10-08T21:38:57.2930000-05:00","~~wow this doesn't even look like bad chatgpt~~","",""
+"445955839757385739","mythic7777","2024-10-08T21:39:14.3560000-05:00","Assume a=b","",""
+"445955839757385739","mythic7777","2024-10-08T21:39:15.5560000-05:00","Lmao","",""
+"596149799477313536","brumo7739","2024-10-08T21:39:16.0690000-05:00","whats a gradient descent","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:39:23.2000000-05:00","me when i prove a=b by assuming a=b","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:39:26.5290000-05:00","https://tenor.com/view/big-o-notation-computer-science-n-factorial-factorial-shock-gif-16724024526637897574","",""
+"445955839757385739","mythic7777","2024-10-08T21:39:45.5410000-05:00","https://tenor.com/view/game-fun-friends-winter-kids-gif-2711938541201540330","",""
+"445955839757385739","mythic7777","2024-10-08T21:39:59.9300000-05:00","Descending on a gradient ^^","",""
+"559559648248594432","atoph","2024-10-08T21:40:29.8700000-05:00","### Theorem:  
+All integers are equal.
+
+### Proof:  
+
+1. **Let \( a \) and \( b \) be any two integers**. We will prove that \( a = b \).
+
+2. **Consider the following equation**:
+   \[
+   f(x) = (x - a)(x - b)
+   \]
+   This is a quadratic function. Now, let's expand it:
+   \[
+   f(x) = x^2 - (a + b)x + ab
+   \]
+   
+3. **Assume \( a = b \)**. In this case, the function simplifies:
+   \[
+   f(x) = (x - a)^2 = x^2 - 2ax + a^2
+   \]
+   Clearly, the function has a double root at \( x = a \).
+
+4. **Take the derivative of the function** \( f(x) \):
+   \[
+   f'(x) = 2x - (a + b)
+   \]
+
+5. **Now, evaluate the derivative at \( x = a \) and \( x = b \)**:
+   \[
+   f'(a) = 2a - (a + b) = a - b
+   \]
+   \[
+   f'(b) = 2b - (a + b) = b - a
+   \]
+
+6. 
+   If \( a = b \), we have \( f'(a) = f'(b) = 0 \). This implies that the function’s slope is zero at both \( a \) and \( b \).  
+   
+   **Now suppose \( a \neq b \)**, but since \( f'(a) = a - b \) and \( f'(b) = b - a \), we get \( a - b = 0 \), which means \( a = b \).
+
+7. **Conclusion**: Since we assumed nothing special about \( a \) and \( b \), it follows that for any two integers \( a \) and \( b \), \( a = b \). Therefore, **all integers are equal**.
+
+\[
+\boxed{\text{Q.E.D.}}
+\]
+
+---
+
+That might be a bit more readable (I asked chatgpt to make it in .md)","",""
+"383088370709954561","2lazy2beoriginal","2024-10-08T21:40:32.6500000-05:00","Should’ve use |a - b| < epilson for all epilson > 0","",""
+"445955839757385739","mythic7777","2024-10-08T21:40:48.5320000-05:00","Didn’t work lol","",""
+"559559648248594432","atoph","2024-10-08T21:40:54.6050000-05:00","Man","",""
+"559559648248594432","atoph","2024-10-08T21:40:58.0550000-05:00","Hate chatgpt","","thistbh (2)"
+"221369063606190081","mikey_9354","2024-10-08T21:41:05.8320000-05:00","using the 'change' of a function to dictate how to increment (aka, on y=x^2, let x = 2, derivative is positive, and we're looking for a minima, so lets go  in the -x direction some distance and check the derivative there, repeat until derivative approx 0)","",""
+"144636179722141696","slabdrill","2024-10-08T21:41:26.5830000-05:00","gradient descent is an algorithm to try to find a maximum of some function. you make a guess arbitrarily and then pick a nearby point (based on the derivative of the function) in hopes that this new guess will be better
+eventually you'll stop moving although you're still not necessarily at the maximum","",""
+"221369063606190081","mikey_9354","2024-10-08T21:41:46.1110000-05:00","max or min, some 'point' that has a difference to other points","",""
+"445955839757385739","mythic7777","2024-10-08T21:41:46.5670000-05:00","Oh shit that was a valid question? Mb","",""
+"445955839757385739","mythic7777","2024-10-08T21:41:57.0260000-05:00","I thought it was shitposting cause of Aidan","",""
+"754820196065345708","headlesssteel","2024-10-08T21:42:28.1730000-05:00","is this 1240","",""
+"559559648248594432","atoph","2024-10-08T21:42:29.2900000-05:00","Lmao","",""
+"559559648248594432","atoph","2024-10-08T21:42:35.2420000-05:00","God no","",""
+"754820196065345708","headlesssteel","2024-10-08T21:42:44.0050000-05:00","so its easier or harder than 1240","",""
+"144636179722141696","slabdrill","2024-10-08T21:42:47.6560000-05:00","i can understand people being confused about gradient descent because of how i'm pretty sure i've literally had someone ask me what gradient descent was after i used it assuming they knew what it was","",""
+"445955839757385739","mythic7777","2024-10-08T21:42:48.2150000-05:00","It’s wrong","",""
+"559559648248594432","atoph","2024-10-08T21:42:48.9550000-05:00","1240 doesn't touch calculus with a 10ft pole","",""
+"445955839757385739","mythic7777","2024-10-08T21:43:14.4020000-05:00","Just unfortunate timing with the current state of the convo lol","",""
+"754820196065345708","headlesssteel","2024-10-08T21:43:29.4280000-05:00","idek what that is","",""
+"754820196065345708","headlesssteel","2024-10-08T21:43:32.3280000-05:00","what level of math is that","",""
+"221369063606190081","mikey_9354","2024-10-08T21:43:38.7390000-05:00","...","",""
+"304267855610904577","jjanzenn","2024-10-08T21:43:51.0220000-05:00","you don't really need gradient descent at all in CS unless you do machine learning tbh","",""
+"754820196065345708","headlesssteel","2024-10-08T21:44:09.3230000-05:00","what is gradient descent what course?","",""
+"445955839757385739","mythic7777","2024-10-08T21:44:21.4230000-05:00","It’s an optimization technique","",""
+"445955839757385739","mythic7777","2024-10-08T21:44:27.2630000-05:00","Frequently used in ML.","",""
+"221369063606190081","mikey_9354","2024-10-08T21:44:35.5330000-05:00","breh, its like 5 messages up","",""
+"754820196065345708","headlesssteel","2024-10-08T21:44:50.9770000-05:00","is ML its own course","",""
+"445955839757385739","mythic7777","2024-10-08T21:44:54.4330000-05:00","Yeah","",""
+"754820196065345708","headlesssteel","2024-10-08T21:44:56.6610000-05:00","ok","",""
+"445955839757385739","mythic7777","2024-10-08T21:45:00.0800000-05:00","A 4th CS course","",""
+"754820196065345708","headlesssteel","2024-10-08T21:45:14.7260000-05:00","will I take that eventually then going for bsc comp sci","",""
+"445955839757385739","mythic7777","2024-10-08T21:45:22.4180000-05:00","It’s not a required course","",""
+"754820196065345708","headlesssteel","2024-10-08T21:45:24.4650000-05:00","ok","",""
+"445955839757385739","mythic7777","2024-10-08T21:45:26.0250000-05:00","So depends upon you","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:45:46.4030000-05:00","this sounds familiar to that one segment in fast inverse square root","",""
+"754820196065345708","headlesssteel","2024-10-08T21:45:53.3940000-05:00","I have the best gif for any situation","",""
+"754820196065345708","headlesssteel","2024-10-08T21:45:55.8520000-05:00","https://tenor.com/view/hikaru-nakamura-reaction-gif-27443211","",""
+"144636179722141696","slabdrill","2024-10-08T21:46:10.8010000-05:00","the cs major works by giving you options for what 3rd/4th year classes you want to take for the most part, so if you want to take it you can but if you want something else instead then you won't","",""
+"445955839757385739","mythic7777","2024-10-08T21:46:38.1260000-05:00","ML is pretty theoretical so make sure you sharpen your fundamentals in math though","",""
+"221369063606190081","mikey_9354","2024-10-08T21:46:43.8200000-05:00","dont you dare make me rewatch it again this year","",""
+"445955839757385739","mythic7777","2024-10-08T21:46:44.4100000-05:00","Also I think you need Calc 3 to take it","",""
+"445955839757385739","mythic7777","2024-10-08T21:46:46.3650000-05:00","Lemme confirm","",""
+"799461567555960843","kerchup","2024-10-08T21:46:53.6890000-05:00","I think it’s just recommended","",""
+"754820196065345708","headlesssteel","2024-10-08T21:47:04.3360000-05:00","im stopping at calc 2 lol","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:47:16.1060000-05:00","only one way to confirm the hypothesis","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:47:26.9070000-05:00","no one needs calc 3 for anything dawg","","👍 (1)"
+"144636179722141696","slabdrill","2024-10-08T21:47:27.5010000-05:00","newton's method is entirely different than gradient descent, the only similarity is being an iterative process based on f'","","thistbh (1)"
+"363279137768734720","pieberrykinnie","2024-10-08T21:47:34.2980000-05:00","ah","",""
+"754820196065345708","headlesssteel","2024-10-08T21:47:47.6730000-05:00","Do you think it is bad that I do not study every single day","",""
+"754820196065345708","headlesssteel","2024-10-08T21:47:56.1000000-05:00","only days when I have assignments to do or tests coming up","",""
+"221369063606190081","mikey_9354","2024-10-08T21:48:04.3840000-05:00","fk what other ppl think","",""
+"221369063606190081","mikey_9354","2024-10-08T21:48:06.9360000-05:00","they're dumb","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:48:10.8680000-05:00","are you getting grades you wanted","",""
+"754820196065345708","headlesssteel","2024-10-08T21:48:12.3930000-05:00","I dont know if it is expected to study hours everyday just cause","",""
+"754820196065345708","headlesssteel","2024-10-08T21:48:21.6910000-05:00","I mean, im first year, its been 1 month,","",""
+"754820196065345708","headlesssteel","2024-10-08T21:48:25.3350000-05:00","im not getting stacks everyday","",""
+"212059547429240844","ninkat","2024-10-08T21:48:29.3710000-05:00","honestly all math past multiplication and division is fictional","","thistbh (3)"
+"754820196065345708","headlesssteel","2024-10-08T21:48:35.3070000-05:00","im keeping up with everything with time","",""
+"754820196065345708","headlesssteel","2024-10-08T21:48:41.8130000-05:00","so I dont know if there is anything more to do","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:48:49.2460000-05:00","if you feel youre keeping up dont pressure yourself to study","",""
+"144636179722141696","slabdrill","2024-10-08T21:48:51.9650000-05:00","~~how are you supposed to take the derivative when you don't know what a derivative is~~","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:48:54.4580000-05:00","maybe youre just built like that","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:49:07.7300000-05:00","idk i use r functions now","",""
+"221369063606190081","mikey_9354","2024-10-08T21:49:12.0110000-05:00","shhh, dont tell them about multi-dimentional calc","",""
+"754820196065345708","headlesssteel","2024-10-08T21:49:23.9470000-05:00","I am keeping up, im not falling behind, sure maybe I didnt do the best on a couple quizzes but I do the most I can to study when time comes","",""
+"445955839757385739","mythic7777","2024-10-08T21:49:25.3080000-05:00","Okay so it’s either MATH 1300 coupled with MATH 1500 or Calc 3","",""
+"445955839757385739","mythic7777","2024-10-08T21:49:28.0840000-05:00","For ML","",""
+"445955839757385739","mythic7777","2024-10-08T21:49:36.5710000-05:00","Though it is recommended that you take Calc 3","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:49:46.2530000-05:00","not feeling youre falling behind is good mentality","",""
+"445955839757385739","mythic7777","2024-10-08T21:49:59.1770000-05:00","But I doubt you’ll be dealing with the hard parts of calc 3. Most likely you’ll just be doing Partial Derivatives","",""
+"754820196065345708","headlesssteel","2024-10-08T21:50:00.4020000-05:00","But I just meant, if you are already keeping up, and you have a few days where you dont have any homework, should you do extra study just because","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:50:16.7520000-05:00","well do you have anything better to do","",""
+"754820196065345708","headlesssteel","2024-10-08T21:50:24.9770000-05:00","a good mentallity but I am blind to reality? Maybe I am just insane, and I am actually months behind","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:50:27.8270000-05:00","personal time included","",""
+"754820196065345708","headlesssteel","2024-10-08T21:50:27.8950000-05:00","while only being 1 month in","",""
+"445955839757385739","mythic7777","2024-10-08T21:50:37.8510000-05:00","Have you had any midterms?","",""
+"799461567555960843","kerchup","2024-10-08T21:50:41.7960000-05:00","I seriously doubt they’d actually make us do the calculus, probably just want you to understand the theory","","thistbh (1)"
+"754820196065345708","headlesssteel","2024-10-08T21:50:42.1790000-05:00","not yet","",""
+"445955839757385739","mythic7777","2024-10-08T21:50:53.2060000-05:00","Do no past midterms/tests are a helpful way of testing if you know the material","",""
+"754820196065345708","headlesssteel","2024-10-08T21:50:56.6050000-05:00","ovcourse midterms is a different convo","",""
+"221369063606190081","mikey_9354","2024-10-08T21:51:05.7420000-05:00","the theory is intense tho, watch out","",""
+"144636179722141696","slabdrill","2024-10-08T21:51:15.6020000-05:00","you don't need to study if you're doing fine without it
+how do you know if you're doing fine? you should be able to tell the moment you look at an assignment/test tbh","",""
+"754820196065345708","headlesssteel","2024-10-08T21:51:17.7960000-05:00","Does anyone here consider themselves insane just because?","",""
+"754820196065345708","headlesssteel","2024-10-08T21:51:31.3500000-05:00","I like to consider myself slightly insane","",""
+"445955839757385739","mythic7777","2024-10-08T21:51:41.0040000-05:00","Yeah. Imagine them asking us to prove that there exists a local diffeomorphism between two functions.","",""
+"445955839757385739","mythic7777","2024-10-08T21:52:01.2700000-05:00","Might be time to get therapy, mate!","",""
+"144636179722141696","slabdrill","2024-10-08T21:52:19.9450000-05:00","there's several classes i'm in each term that i simply don't study for because i see no reason to (due to how straightforward they are)","",""
+"754820196065345708","headlesssteel","2024-10-08T21:52:23.3870000-05:00","lol, but I like the word insane. So I do not mind calling myself insane even if it is not true","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:52:23.8560000-05:00","peter when he drops math only to be made to do multivar and partial derivatives in math 2740","",""
+"754820196065345708","headlesssteel","2024-10-08T21:52:41.9310000-05:00","I see","",""
+"445955839757385739","mythic7777","2024-10-08T21:52:58.5080000-05:00","I doubt they go in depth with multivariable functions.","",""
+"754820196065345708","headlesssteel","2024-10-08T21:53:01.8810000-05:00","Does anyone want to give me a 5 second therapy session","",""
+"445955839757385739","mythic7777","2024-10-08T21:53:03.0790000-05:00","How do you guys have the time","",""
+"445955839757385739","mythic7777","2024-10-08T21:53:19.3690000-05:00","It might be better to take that conversation to #casual-chat","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:53:25.6860000-05:00","we dont go in depth in anything dawg they just give us the steps and say “go do it”","",""
+"754820196065345708","headlesssteel","2024-10-08T21:53:29.3790000-05:00","but what if it is math therapy, 5 seconds","",""
+"445955839757385739","mythic7777","2024-10-08T21:53:29.6210000-05:00","Bruh","",""
+"799461567555960843","kerchup","2024-10-08T21:53:51.8500000-05:00","Depends on the course imo, if it’s a course where you’re building skills you don’t already have (most math courses, comp sci if you’re new to it) then regular practice is a good idea. Midterms usually don’t give you a lot of time per question, so being familiar enough that you can do it without thinking pays off","",""
+"754820196065345708","headlesssteel","2024-10-08T21:54:02.4030000-05:00","Someone give me a theraputical math question that takes 5 seconds to answer, (if it makes me go more insane then...)","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:54:14.4740000-05:00","prove sqrt2 is irrational","",""
+"754820196065345708","headlesssteel","2024-10-08T21:54:21.2870000-05:00","ah fu-","",""
+"424329607106265088","tzshadow","2024-10-08T21:54:21.7050000-05:00","if i have 2 apples","",""
+"424329607106265088","tzshadow","2024-10-08T21:54:25.0200000-05:00","and peter takes one","",""
+"754820196065345708","headlesssteel","2024-10-08T21:54:30.4710000-05:00","uh oh","",""
+"424329607106265088","tzshadow","2024-10-08T21:54:30.5880000-05:00","whats the mass of the sun","",""
+"754820196065345708","headlesssteel","2024-10-08T21:54:33.4610000-05:00","7","",""
+"221369063606190081","mikey_9354","2024-10-08T21:54:35.7540000-05:00","prove there are infinitely many primes","",""
+"424329607106265088","tzshadow","2024-10-08T21:54:39.4720000-05:00","HOW DID THEY KNOW","",""
+"754820196065345708","headlesssteel","2024-10-08T21:54:44.9250000-05:00","n+2 = 4","",""
+"445955839757385739","mythic7777","2024-10-08T21:54:50.8410000-05:00","Which method? Eulers?","",""
+"754820196065345708","headlesssteel","2024-10-08T21:55:01.2710000-05:00","no, Hikarus method","",""
+"363279137768734720","pieberrykinnie","2024-10-08T21:55:01.7160000-05:00","something something assume finitely many primes add them all + 1","",""
+"445955839757385739","mythic7777","2024-10-08T21:55:17.9820000-05:00","Eulers method","",""
+"754820196065345708","headlesssteel","2024-10-08T21:55:20.5630000-05:00","I ate them before you even had 2","",""
+"383088370709954561","2lazy2beoriginal","2024-10-08T21:55:24.2230000-05:00","Proof by you told me so","","🙅‍♂️ (1)"
+"424329607106265088","tzshadow","2024-10-08T21:55:41.4840000-05:00","so that's why my lunch was missing....","",""
+"424329607106265088","tzshadow","2024-10-08T21:55:46.6520000-05:00","you ate my peanut butter sandwiches too smh","",""
+"754820196065345708","headlesssteel","2024-10-08T21:55:53.0050000-05:00","no that was Jim","",""
+"754820196065345708","headlesssteel","2024-10-08T21:56:00.4850000-05:00","Jim ate the peanut butter sandwich","",""
+"424329607106265088","tzshadow","2024-10-08T21:56:02.7520000-05:00","no I think it was Joe","",""
+"754820196065345708","headlesssteel","2024-10-08T21:56:05.5330000-05:00","nono","",""
+"754820196065345708","headlesssteel","2024-10-08T21:56:07.5930000-05:00","Uncle Jim did it","",""
+"754820196065345708","headlesssteel","2024-10-08T21:56:14.0220000-05:00","he is in the uh","",""
+"424329607106265088","tzshadow","2024-10-08T21:56:14.7860000-05:00","fuckin jim","",""
+"754820196065345708","headlesssteel","2024-10-08T21:56:21.9970000-05:00","mini fridge, there is a secret room behind it","",""
+"754820196065345708","headlesssteel","2024-10-08T21:56:29.6980000-05:00","he has his man cave there","",""
+"754820196065345708","headlesssteel","2024-10-08T21:56:35.8140000-05:00","sneaks out at night","",""
+"424329607106265088","tzshadow","2024-10-08T21:56:38.1600000-05:00","OH","",""
+"754820196065345708","headlesssteel","2024-10-08T21:56:40.6520000-05:00","yes","",""
+"424329607106265088","tzshadow","2024-10-08T21:56:46.6910000-05:00","THATS WHO WAS TRIGGERING THE CSSA ALERT SYSTEM","",""
+"424329607106265088","tzshadow","2024-10-08T21:56:52.4970000-05:00","WE FOUND THE CULPRIT AT 1AM","",""
+"754820196065345708","headlesssteel","2024-10-08T21:56:52.5350000-05:00","YES","",""
+"754820196065345708","headlesssteel","2024-10-08T21:56:54.0840000-05:00","UNCLE JIM","",""
+"424329607106265088","tzshadow","2024-10-08T21:57:02.3760000-05:00","THAT OLD SON OF A","",""
+"445955839757385739","mythic7777","2024-10-08T21:58:26.9180000-05:00","Anyways, back to math topics.","",""
+"445955839757385739","mythic7777","2024-10-08T21:58:40.3290000-05:00","Can anybody help me solve an polynomial with degree > 1 recurrence relation?","",""
+"754820196065345708","headlesssteel","2024-10-08T21:58:53.1710000-05:00","Bro I should leave i dont know any of these terms","",""
+"445955839757385739","mythic7777","2024-10-08T21:59:03.8660000-05:00","For example, take Fibonnacii:
+F_n = F{n-1} + F{n - 2}","",""
+"445955839757385739","mythic7777","2024-10-08T21:59:24.0120000-05:00","But now, say you have:
+Pn = (P{n-1})^2 + (P{n-2})^2.","",""
+"799461567555960843","kerchup","2024-10-08T21:59:39.2960000-05:00","Bruh","","thistbh (2)"
+"445955839757385739","mythic7777","2024-10-08T21:59:45.6490000-05:00","I looked online and other than a couple of math exchange links where they said that the closed form solution is hard to find; I found nothing.","",""
+"445955839757385739","mythic7777","2024-10-08T22:00:20.9880000-05:00","Also, is there a term for recurrence relations that rely on each other?","",""
+"445955839757385739","mythic7777","2024-10-08T22:01:24.6390000-05:00","For example if I have the same example as the fibonnacci sequences (Fn) and the exponential fibonacci sequence (Pn). Derive another recurrence relation Qn = F{n-1} + (P{n -2})^2.","",""
+"445955839757385739","mythic7777","2024-10-08T22:01:35.7210000-05:00","Is there a methodical way to solve such related recurrence relations?","",""
+"445955839757385739","mythic7777","2024-10-08T22:02:12.1280000-05:00","For linear terms, I can just apply the method of characteristic polynomials and solve for them, but it doesn't extend or generalize to higher order terms so I can't use that.","",""
+"144636179722141696","slabdrill","2024-10-08T22:02:45.7340000-05:00","i don't think there is a good way to find a closed-form solution in these cases, though i'd have to look more into it","",""
+"445955839757385739","mythic7777","2024-10-08T22:02:56.0620000-05:00","I'm gonna cry if there isn't.","",""
+"144636179722141696","slabdrill","2024-10-08T22:03:30.1580000-05:00","also (afaik) if you have recurrance relations that rely on each other then you can always rewrite it as a single complicated recurrance relation","",""
+"445955839757385739","mythic7777","2024-10-08T22:04:24.8210000-05:00","Yeah, that is true. The reason why I made the relation is because it has a geometric meaning with the question I'm trying to solve so it's easier to remember the relation.","",""
+"224685921096826880","christopher5825","2024-10-09T00:43:07.8710000-05:00","once again, as stated by your algorithm. The process is to entirely fill the jar b ONLY with jar a. This does not mean only verifying its full. This means verifying that the jar was filled ONLY by water from jar a. this can only be done by watching each pour. This is not a time when induction counts. If you wanted to try to do that, you would need a TM for the problem that accepts the final output, AND the TM used to produce the output. We know from theory class how that goes.","",""
+"224685921096826880","christopher5825","2024-10-09T00:46:32.6910000-05:00","imagine you look away and i fill it with pickle juice. it is full. it is now a pickle jar. this proof does not work","",""
+"224685921096826880","christopher5825","2024-10-09T00:48:18.0210000-05:00","that being said, if you have some way to verify in polynomial time that nothing else could have filled the jar, then you are cooking, but there isnt","",""
+"224685921096826880","christopher5825","2024-10-09T00:48:47.4470000-05:00","and this still really isn't a decision problem","",""
+"854062130797871106","calebnwokocha","2024-10-09T10:35:25.6400000-05:00","What if we remove the condition that jar B is filled by using only jar A. The new is problem is just fill jar B. Then the verifier don't need to check whether jar B was filled by using only jar A.","",""
+"304267855610904577","jjanzenn","2024-10-09T10:42:17.7940000-05:00","There is now a polynomial time algorithm: fill jar B with jar C which is of size 2^k units","",""
+"854062130797871106","calebnwokocha","2024-10-09T10:44:59.3350000-05:00","If filling jar C takes O(2^k) time, then filling jar B will take O(2^k).","",""
+"304267855610904577","jjanzenn","2024-10-09T10:49:17.6430000-05:00","Ok sure. We can treat it as a physical system. Now verify that there is water beneath the brim without checking each 2^k-1 unit beneath the top.","",""
+"854062130797871106","calebnwokocha","2024-10-09T10:53:49.9440000-05:00","It should be polynomial (constant) time verification.","",""
+"304267855610904577","jjanzenn","2024-10-09T10:54:02.6640000-05:00","Now verify that there is water beneath the brim without checking each 2^k-1 unit beneath the top.","",""
+"854062130797871106","calebnwokocha","2024-10-09T11:00:58.8860000-05:00","Jar B might not be filled entirely with water. As @hawkstopher tuaheuer pointed, a portion of Jar B may be filled with pickle juice. So the verification just at the brim won't work if Jar B contains pickle juice. To fix this, remove the condition that Jar B should only be filled with water. The new problem is just fill Jar B to its brim.","",""
+"304267855610904577","jjanzenn","2024-10-09T11:02:05.9870000-05:00","I place a layer of helium at the top of the jar. It floats on top of the air already in it. There is a fluid at the brim so the verification passes","",""
+"224685921096826880","christopher5825","2024-10-09T11:06:50.0560000-05:00","What you are asking is the same as ‘What is 2^K’. if your answer is binary you can even just shift K-1 times to do this.  for the jar scenario I just use a bigger jar to fill it.","",""
+"224685921096826880","christopher5825","2024-10-09T11:08:12.3810000-05:00","the orocess has now removed the limitation on how it’s filled. Instead of asking, print numbers from K to 2^K you are asking, what is 2^K. This is polynomial time.","",""
+"854062130797871106","calebnwokocha","2024-10-09T11:08:57.2310000-05:00","Let jar B be a transparent glass so that the verifier can see all its content in constant time.","",""
+"224685921096826880","christopher5825","2024-10-09T11:09:33.9130000-05:00","once again. what you are asking is, what is 2^K","",""
+"224685921096826880","christopher5825","2024-10-09T11:17:38.9480000-05:00","Filling Jar B in polynomial time. 
+cur_k = K. 
+helpers = [ jacob ]
+While cur_k > 0: 
+- each helper instantly recruits 1 new helper
+- cur_k -= 1
+Each helper, in parallel, dumps one unit of water into B.","",""
+"224685921096826880","christopher5825","2024-10-09T11:19:04.3010000-05:00","this is normally just called bit shifting though","",""
+"302268546187264010","stegosnoreus","2024-10-09T11:25:43.2940000-05:00","Yeah but @hawkstopher tuaheuer the jar is clear so you can just look inside.","",""
+"302268546187264010","stegosnoreus","2024-10-09T11:26:38.5750000-05:00","Use your peepers","",""
+"854062130797871106","calebnwokocha","2024-10-09T11:36:34.4860000-05:00","What is the time complexity of recruiting a new helper?","",""
+"304267855610904577","jjanzenn","2024-10-09T11:37:44.4540000-05:00","constant","",""
+"854062130797871106","calebnwokocha","2024-10-09T11:41:13.5710000-05:00","Recruitment is a long process that might require interview.","",""
+"304267855610904577","jjanzenn","2024-10-09T11:42:01.9880000-05:00","ok you're just being intentionally obtuse now.","",""
+"302268546187264010","stegosnoreus","2024-10-09T11:45:25.5030000-05:00","Caleb you should recognize the value that people have given by taking time to review your work. Peer review is part of the academic cycle and an important one at that.","",""
+"854062130797871106","calebnwokocha","2024-10-09T11:48:09.0400000-05:00","Very right Mark. I am just sharing my thoughts and appreciating any feedback on them.","",""
+"302268546187264010","stegosnoreus","2024-10-09T11:49:52.3120000-05:00","Not really but ok.","",""
+"224685921096826880","christopher5825","2024-10-09T11:50:10.3790000-05:00","it’s constant time. r u just messing with us Lol","",""
+"224685921096826880","christopher5825","2024-10-09T11:50:54.6660000-05:00","👁️👄👁️","","thistbh (2)"
+"221369063606190081","mikey_9354","2024-10-09T11:54:13.3730000-05:00","👁️👅👁️","",""
+"224685921096826880","christopher5825","2024-10-09T12:23:08.1790000-05:00","https://chatgpt.com/share/6706bbd5-bb44-8009-9267-bbc087fb0342
+
+Added a final message to the chat","",""
+"854062130797871106","calebnwokocha","2024-10-09T12:43:59.5010000-05:00","","Capture-C0F48.PNG",""
+"224685921096826880","christopher5825","2024-10-09T12:48:09.6860000-05:00","Does a job interview time scale with the size of the jar?","",""
+"224685921096826880","christopher5825","2024-10-09T12:48:29.9590000-05:00","If you interview with a company, will the interview take longer if a jar is bigger somewhere in the world","",""
+"224685921096826880","christopher5825","2024-10-09T12:48:56.2800000-05:00","the jar is a bad analogy for your proposed algorithm. why are you talking about a jar","",""
+"224685921096826880","christopher5825","2024-10-09T13:01:50.1100000-05:00","if a job interview length does not scale with the SIZE OF A JAR, then it is called constant time","",""
+"363279137768734720","pieberrykinnie","2024-10-09T13:03:14.5210000-05:00","top 10 philosophical questions","","bat_man (4)"
+"559559648248594432","atoph","2024-10-09T13:12:49.0650000-05:00","Me when the interviewer drops 10mL/min of water into an inverted conical jar with height of 10cm and base of 5cm and they ask me to determine the rate of change of the water level after 4 minutes have passed and the interview ends when the jar is full","",""
+"747395140926177280","comtdk","2024-10-09T13:16:23.3220000-05:00",":why_kong_wario:","",""
+"869782115187847169","misshellee","2024-10-09T14:21:23.8080000-05:00","first part of this conversation i understand","",""
+"363279137768734720","pieberrykinnie","2024-10-09T14:23:38.4610000-05:00","do it then","",""
+"951696973164064779","arsh_0.0_","2024-10-09T14:23:45.2880000-05:00","Did they really ask this?","",""
+"221369063606190081","mikey_9354","2024-10-09T14:35:47.5280000-05:00","I mean, even if they did, I'd just immediately answer 'at least 3'","",""
+"221369063606190081","mikey_9354","2024-10-09T14:35:51.9070000-05:00","ez job","",""
+"951696973164064779","arsh_0.0_","2024-10-09T14:37:20.8010000-05:00",">=0 is even easier","",""
+"221369063606190081","mikey_9354","2024-10-09T14:38:35.5640000-05:00","not if the jar is leaking faster than its filling up","",""
+"951696973164064779","arsh_0.0_","2024-10-09T14:40:57.3980000-05:00","Nvm 
+I was thinking of something else","",""
