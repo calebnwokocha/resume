@@ -25,6 +25,7 @@ nav a {
     text-decoration: none;
     margin: 0 15px;
     font-size: 1.1rem;
+    display: inline-block;
 }
 nav a:hover {
     text-decoration: underline;
@@ -58,8 +59,7 @@ iframe {
         font-size: 2rem;
     }
     nav a {
-        display: block;
-        margin: 10px 0;
+        margin: 0 10px;
         font-size: 1rem;
     }
     main {
@@ -74,6 +74,7 @@ iframe {
         font-size: 1.5rem;
     }
     nav a {
+        margin: 0 5px;
         font-size: 0.9rem;
     }
     iframe {
